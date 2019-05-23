@@ -5,7 +5,7 @@
 
 
 
-echo "  DEVELOPMENT STAGE     WELCOME TO NZAP - AUTOMATED NMAP SCANNER   - SUMEET MOTWANI                  "
+echo "  DEVELOPMENT STAGE  v0.0.1   WELCOME TO NZAP - AUTOMATED NMAP SCANNER   -      SUMEET MOTWANI                  "
 echo "                                          z                               "
 echo "┈┈╱▔▔▔▔▔╲┈┈┈HM┈HM		nnnnnn     zz             aaa      ppppppp"
 echo "┈╱┈┈╱▔╲╲╲▏┈┈┈HMMM		nnn   n     zzzz         aa aa     ppppppp"
@@ -25,20 +25,27 @@ echo "┈╱▔┈┈▕┈┈┈┈▏┈┈▔╲▔▔							  "
 echo "┈╲▂▂▂╱┈┈┈┈╲▂▂▂╱┈                                                    "
 
 
-echo  ...............---------SELECT OUTPUT FORMAT-----------..............
+
+
+
+ echo  ...............---------SELECT OUTPUT FORMAT-----------..............
 echo 1-Display on terminal
 echo 2-Save output to a text file 
 echo 3-Save output to a xml file 
 
 read format
 if [ "$format" = 2 ]
-then  echo enter filename.txt  (PLEASE USE .txt extension)
+then  echo enter filename.txt  PLEASE USE .txt extension
 read name
         fi
 if [ "$format" = 3 ]
-then  echo enter filename.xml  (PLEASE USE .xml extension)
+then  echo enter filename.xml  PLEASE USE .xml extension
 read name
+
+
         fi
+
+
 echo ENTER IP ADDRESS OR URL OR RANGE 
 read ip
 echo enter 1-PING SCAN
@@ -46,7 +53,7 @@ echo enter 2-INTENSE SCAN
 echo enter 3-QUICK SCAN
 echo enter 4-STEALTH SCAN
 echo enter 5-INTENSE SCAN WITH TCP PORTS MENTIONED
-echo enter 6-IP Address information
+echo enter 6-IP Address information [ONLY ON TERMINAL]
 echo enter 7-XMAS SCAN
 echo enter 8-ACK SCAN
 echo enter 9-OS DETECTION
@@ -143,15 +150,15 @@ then  nmap -p "$port1"-"$port2" -T4 -A -v "$ip" -oX "$name"
         
         
               if [ "$format" = 1 ] && [ "$userch" = "6" ]
-then  nmap --script=asn-query,whois,ip-geolocation-maxmind "$ip"
+then  whois "$ip"
         fi
         
         if [ "$format" = 2 ] && [ "$userch" = "6" ]
-then  nmap --script=asn-query,whois,ip-geolocation-maxmind "$ip" -oN "$name"
+then  whois "$ip"
         fi
         
          if [ "$format" = 3 ] && [ "$userch" = "6" ]
-then  nmap --script=asn-query,whois,ip-geolocation-maxmind "$ip" -oX "$name"
+then  whois "$ip"
         fi
         
         
@@ -415,3 +422,5 @@ then  nmap -v "$ip" -oN "$name"
          if [ "$format" = 3 ] && [ "$userch" = "23" ]
 then  nmap -v "$ip" -oX "$name"
         fi
+
+
