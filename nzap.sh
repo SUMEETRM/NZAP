@@ -341,7 +341,7 @@ then  nmap -sS -f "$ip" -oN "$name"
 then  nmap -sS -f "$ip" -oX "$name"
         fi
         
-          if [ "$fch" = "7" ]
+          if [ "$ach" = "7" ]
 then echo Enter port numbers for the range
 read port1
 read port2
@@ -349,15 +349,15 @@ read port2
         
         
         
-        if [ "$format" = 1 ] && [ "$fch" = "7" ]
+        if [ "$format" = 1 ] && [ "$ach" = "7" ]
 then  nmap -p "$port1"-"$port2" -T4 -A -v "$ip"
         fi
         
-        if [ "$format" = 2 ] && [ "$fch" = "7" ]
+        if [ "$format" = 2 ] && [ "$ach" = "7" ]
 then  nmap -p "$port1"-"$port2" -T4 -A -v "$ip" -oN "$name"
         fi
         
-         if [ "$format" = 3 ] && [ "$fch" = "7" ]
+         if [ "$format" = 3 ] && [ "$ach" = "7" ]
 then  nmap -p "$port1"-"$port2" -T4 -A -v "$ip" -oX "$name"
         fi
         
