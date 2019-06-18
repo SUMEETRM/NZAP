@@ -444,15 +444,15 @@ then  nmap -sP "$ip" -oX "$name"
         
         
                if [ "$format" = 1 ] && [ "$userch" = "5" ]
-then  nmap -T4 -A -v "$ip"
+then  nmap -T4 -A -sV "$ip"
         fi
         
         if [ "$format" = 2 ] && [ "$userch" = "5" ]
-then  nmap -T4 -A -v "$ip" -oN "$name"
+then  nmap -T4 -A -sV "$ip" -oN "$name"
         fi
         
          if [ "$format" = 3 ] && [ "$userch" = "5" ]
-then  nmap -T4 -A -v "$ip" -oX "$name"
+then  nmap -T4 -A -sV "$ip" -oX "$name"
         fi
         
         
